@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: ${sanniu-user.name:sanniu-user}
+  cloud:
+    config:
+      failFast: true
+      uri: http://${config.address:localhost}:${config.port:8888}
+      label:  2019-S2-RELEASE #配置文件的分支
+  profiles:
+    active: ${config.active:dev}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.address:localhost}:${eureka.port:8761}/eureka/
+  instance:
+    healthCheckUrlPath: /health
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+    preferIpAddress: true
+    statusPageUrlPath: /info
+
+endpoints:
+  refresh:
+    enabled: true
+  shutdown:
+    enabled: true
+  env:
+    post:
+      enabled: true
+  restart:
+    enabled: true
+  health:
+    sensitive: true
+
+management:
+  security:
+    enabled: false
+
+feign:
+  hystrix:
+    enabled: true
+
+mybatis-plus:
+  type-aliases-package: com.springCloud.provider.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true  #自动开启驼峰规则映射
