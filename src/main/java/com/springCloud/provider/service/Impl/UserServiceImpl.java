@@ -1,6 +1,8 @@
 package com.springCloud.provider.service.Impl;
 
+import com.springCloud.provider.entity.UserDo;
 import com.springCloud.provider.mapper.UserMapper;
+import com.springCloud.provider.persistence.UserDoMapper;
 import com.springCloud.provider.pojo.result.UserResult;
 import com.springCloud.provider.service.UserService;
 import com.springCloud.provider.util.ProviderThreadPoolUtil;

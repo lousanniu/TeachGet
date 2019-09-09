@@ -1,6 +1,7 @@
 package com.springCloud.provider.controller;
 
 import com.springCloud.provider.Constants;
+import com.springCloud.provider.entity.UserDo;
 import com.springCloud.provider.pojo.result.UserResult;
 import com.springCloud.provider.response.Response;
 import com.springCloud.provider.response.ResponseHelper;
