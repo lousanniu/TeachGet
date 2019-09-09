@@ -1,23 +1,15 @@
 package com.springCloud.provider.controller;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.segments.MergeSegments;
-import com.springCloud.provider.entity.UserDo;
 import com.springCloud.provider.mapper.UserMapper;
-import com.springCloud.provider.persistence.UserDoMapper;
 import com.springCloud.provider.pojo.result.UserResult;
 import com.springCloud.provider.pojo.vo.UserVo;
 import com.springCloud.provider.response.Response;
 import com.springCloud.provider.response.ResponseHelper;
 import io.swagger.annotations.*;
-import io.swagger.models.auth.In;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
