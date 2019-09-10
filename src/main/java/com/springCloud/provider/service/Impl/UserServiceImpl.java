@@ -1,8 +1,8 @@
 package com.springCloud.provider.service.Impl;
 
-import com.springCloud.provider.pojo.result.User;
+import com.springCloud.provider.entity.UserDo;
+import com.springCloud.provider.persistence.UserDoMapper;
 import com.springCloud.provider.mapper.UserMapper;
-import com.springCloud.provider.mapper.UserDoMapper;
 import com.springCloud.provider.service.UserService;
 import com.springCloud.provider.util.ProviderThreadPoolUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService {
     private UserDoMapper userDoMapper;
 
     @Override
-    public User findUserById(Long id) throws ExecutionException, InterruptedException {
+    public UserDo findUserById(Long id) throws ExecutionException, InterruptedException {
         Future result = ProviderThreadPoolUtil.execAsync(new MyTask(id));
-        return (User)result.get();
+        return (UserDo)result.get();
     }
 
     class MyTask implements Callable{
@@ -35,9 +35,9 @@ public class UserServiceImpl implements UserService {
         }
 
         @Override
-        public User call() throws Exception {
+        public UserDo call() throws Exception {
             log.info("当前线程是:{}", Thread.currentThread().getName());
-            User userResult = userDoMapper.selectByPrimaryKey(id);
+            UserDo userResult = userDoMapper.selectByPrimaryKey(id);
             return userResult;
         }
     }

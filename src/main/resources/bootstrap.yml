@@ -44,6 +44,6 @@ feign:
 
 mybatis:
   type-aliases-package: com.springCloud.provider.pojo,com.springCloud.provider.entity
-  mapper-locations: ["classpath:/mybatis/mappers/*.xml","classpath:/com/springCloud/provider/persistence/**/*Repository.xml"]
+  mapper-locations: ["classpath:/com/springCloud/provider/persistence/*.xml"]
   configuration:
     map-underscore-to-camel-case: true  #自动开启驼峰规则映射

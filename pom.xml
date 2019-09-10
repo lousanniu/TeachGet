@@ -56,12 +56,26 @@
                 <!--允许移动生成的文件 -->
                 <verbose>true</verbose>
                 <!-- 是否覆盖 -->
-                <overwrite>true</overwrite>
+                <overwrite>false</overwrite>
                 <!-- 自动生成的配置 -->
                 <configurationFile>
                     src/main/resources/mybatis-generator.xml</configurationFile>
             </configuration>
         </plugin>
         </plugins>
+
+        <!--为了解决mapper。xml文件放在persistence文件夹下不能生效问题，此配置意义就在于指定了resource的目录要加载出来-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
     </build>
 </project>

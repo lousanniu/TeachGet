@@ -1,10 +1,10 @@
 package com.springCloud.provider.service;
 
 
-import com.springCloud.provider.pojo.result.User;
+import com.springCloud.provider.entity.UserDo;
 
 import java.util.concurrent.ExecutionException;
 
 public interface UserService {
-    User findUserById(Long id) throws ExecutionException, InterruptedException;
+    UserDo findUserById(Long id) throws ExecutionException, InterruptedException;
 }

@@ -1,7 +1,6 @@
-package com.springCloud.provider.pojo.vo;
+package com.springCloud.provider.entity;
 
 public class UserDo {
-
     private Integer id;
 
     private String name;
