@@ -8,10 +8,6 @@ package com.springCloud.provider.pojo.result;
  * @create 2019/8/31
  */
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.springCloud.provider.annotation.PatternInt;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,10 +23,8 @@ import java.io.Serializable;
 @ApiModel(value = "User", description = "用户信息")
 @Data
 @Accessors(chain=true)
-@TableName("user")
-public class UserResult implements Serializable{
+public class User implements Serializable{
 
-    @TableId(type=IdType.AUTO)
     private Integer id;
 
     @ApiModelProperty(value = "名称", position = 2, example = "Lily")

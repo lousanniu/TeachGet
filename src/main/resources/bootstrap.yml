@@ -42,8 +42,8 @@ feign:
   hystrix:
     enabled: true
 
-mybatis-plus:
-  type-aliases-package: com.springCloud.provider.pojo
-  mapper-locations: classpath:/mybatis/mappers/*.xml
+mybatis:
+  type-aliases-package: com.springCloud.provider.pojo,com.springCloud.provider.entity
+  mapper-locations: ["classpath:/com/springCloud/provider/persistence/*.xml"]
   configuration:
     map-underscore-to-camel-case: true  #自动开启驼峰规则映射

@@ -25,5 +25,57 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-maven-plugin</artifactId>
+            <version>1.3.5</version>
+            <dependencies>
+                <dependency>
+                    <groupId> mysql</groupId>
+                    <artifactId> mysql-connector-java</artifactId>
+                    <version> 5.1.39</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-core</artifactId>
+                    <version>1.3.5</version>
+                </dependency>
+            </dependencies>
+            <executions>
+                <execution>
+                    <id>Generate MyBatis Artifacts</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>generate</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <!--允许移动生成的文件 -->
+                <verbose>true</verbose>
+                <!-- 是否覆盖 -->
+                <overwrite>false</overwrite>
+                <!-- 自动生成的配置 -->
+                <configurationFile>
+                    src/main/resources/mybatis-generator.xml</configurationFile>
+            </configuration>
+        </plugin>
+        </plugins>
 
+        <!--为了解决mapper。xml文件放在persistence文件夹下不能生效问题，此配置意义就在于指定了resource的目录要加载出来-->
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
 </project>

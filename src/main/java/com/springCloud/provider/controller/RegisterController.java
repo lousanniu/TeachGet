@@ -2,7 +2,7 @@ package com.springCloud.provider.controller;
 
 import com.springCloud.provider.Constants;
 import com.springCloud.provider.pojo.params.UserParam;
-import com.springCloud.provider.pojo.result.UserResult;
+import com.springCloud.provider.pojo.result.User;
 import com.springCloud.provider.response.Response;
 import com.springCloud.provider.response.ResponseHelper;
 import com.springCloud.provider.service.RegisterService;
@@ -40,7 +40,7 @@ public class RegisterController {
             @ApiResponse(code = Constants.SERVER_ERROR, message = Constants.SERVER_ERROR_MESSAGE)
     })
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public Response<UserResult> register(@RequestBody @Valid UserParam userParam) {
+    public Response<User> register(@RequestBody @Valid UserParam userParam) {
         log.info("参数结果未{}", userParam);
         registerService.register(userParam);
         return ResponseHelper.createResponse(Constants.REQ_SUCCESS_CODE, "注册成功");
