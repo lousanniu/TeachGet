@@ -1,7 +1,7 @@
 package com.springCloud.provider.controller;
 
 import com.springCloud.provider.Constants;
-import com.springCloud.provider.entity.UserDo;
+import com.springCloud.provider.entity.UserDO;
 import com.springCloud.provider.response.Response;
 import com.springCloud.provider.response.ResponseHelper;
 import com.springCloud.provider.service.UserService;
@@ -50,13 +50,13 @@ public class UserController {
             @ApiResponse(code = Constants.SERVER_ERROR, message = Constants.SERVER_ERROR_MESSAGE)
     })
     @RequestMapping(value = "{userId}",method = RequestMethod.GET)
-    public Response<UserDo> findUserByName(@PathVariable("userId") Long userId ) throws ExecutionException, InterruptedException {
+    public Response<UserDO> findUserByName(@PathVariable("userId") Long userId ) throws ExecutionException, InterruptedException {
         System.out.println(11);
         if (Objects.isNull(userId)) {
             log.error("参数id为空");
             return ResponseHelper.createResponse(Constants.SERVER_ERROR, Constants.SERVER_ERROR_MESSAGE);
         }
-        UserDo user = userService.findUserById(userId);
+        UserDO user = userService.findUserById(userId);
         if (Objects.isNull(user)) {
             return ResponseHelper.createNotFoundResponse();
         }

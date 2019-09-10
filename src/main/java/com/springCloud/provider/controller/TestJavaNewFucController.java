@@ -1,17 +1,8 @@
 package com.springCloud.provider.controller;
 
-import com.springCloud.provider.mapper.UserMapper;
-import com.springCloud.provider.pojo.vo.UserVo;
-import com.springCloud.provider.response.Response;
-import com.springCloud.provider.response.ResponseHelper;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * 〈一句话功能简述〉<br>
