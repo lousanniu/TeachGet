@@ -9,6 +9,7 @@ import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -22,6 +23,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @ApiOperation(value = "swagger测试api", notes = "swagger测试api")
     @ApiImplicitParams({
@@ -51,7 +55,6 @@ public class UserController {
     })
     @RequestMapping(value = "{userId}",method = RequestMethod.GET)
     public Response<UserDO> findUserByName(@PathVariable("userId") Long userId ) throws ExecutionException, InterruptedException {
-        System.out.println(11);
         if (Objects.isNull(userId)) {
             log.error("参数id为空");
             return ResponseHelper.createResponse(Constants.SERVER_ERROR, Constants.SERVER_ERROR_MESSAGE);
@@ -62,4 +65,5 @@ public class UserController {
         }
         return ResponseHelper.createSuccessResponse(user);
     }
+
 }
