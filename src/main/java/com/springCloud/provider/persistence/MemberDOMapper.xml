@@ -174,4 +174,177 @@
       delete_state = #{deleteState,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <resultMap id="BaseResultMap" type="com.springCloud.provider.entity.MemberDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="member_name" jdbcType="VARCHAR" property="memberName" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+    <result column="creat_id" jdbcType="BIGINT" property="creatId" />
+    <result column="delete_state" jdbcType="INTEGER" property="deleteState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, member_name, tel, nick_name, head_img, status, create_date, update_date, pwd, 
+    signature, creat_id, delete_state
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from member
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from member
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.springCloud.provider.entity.MemberDO">
+    insert into member (id, member_name, tel, 
+      nick_name, head_img, status, 
+      create_date, update_date, pwd, 
+      signature, creat_id, delete_state
+      )
+    values (#{id,jdbcType=BIGINT}, #{memberName,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{nickName,jdbcType=VARCHAR}, #{headImg,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP}, #{pwd,jdbcType=VARCHAR}, 
+      #{signature,jdbcType=VARCHAR}, #{creatId,jdbcType=BIGINT}, #{deleteState,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.springCloud.provider.entity.MemberDO">
+    insert into member
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="memberName != null">
+        member_name,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="headImg != null">
+        head_img,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="signature != null">
+        signature,
+      </if>
+      <if test="creatId != null">
+        creat_id,
+      </if>
+      <if test="deleteState != null">
+        delete_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="memberName != null">
+        #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null">
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="creatId != null">
+        #{creatId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteState != null">
+        #{deleteState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.springCloud.provider.entity.MemberDO">
+    update member
+    <set>
+      <if test="memberName != null">
+        member_name = #{memberName,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="headImg != null">
+        head_img = #{headImg,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="signature != null">
+        signature = #{signature,jdbcType=VARCHAR},
+      </if>
+      <if test="creatId != null">
+        creat_id = #{creatId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteState != null">
+        delete_state = #{deleteState,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.springCloud.provider.entity.MemberDO">
+    update member
+    set member_name = #{memberName,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      head_img = #{headImg,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      signature = #{signature,jdbcType=VARCHAR},
+      creat_id = #{creatId,jdbcType=BIGINT},
+      delete_state = #{deleteState,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
 </mapper>

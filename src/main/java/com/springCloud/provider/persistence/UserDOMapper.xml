@@ -941,4 +941,944 @@
       validate_type = #{validateType,jdbcType=INTEGER}
     where user_id = #{userId,jdbcType=BIGINT}
   </update>
+  <resultMap id="BaseResultMap" type="com.springCloud.provider.entity.UserDO">
+    <id column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="head_portrait_url" jdbcType="VARCHAR" property="headPortraitUrl" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="gender" jdbcType="BIT" property="gender" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="id_card_number" jdbcType="VARCHAR" property="idCardNumber" />
+    <result column="id_card_url" jdbcType="VARCHAR" property="idCardUrl" />
+    <result column="driving_license_url" jdbcType="VARCHAR" property="drivingLicenseUrl" />
+    <result column="audit_flag" jdbcType="INTEGER" property="auditFlag" />
+    <result column="interim_audit_flag" jdbcType="INTEGER" property="interimAuditFlag" />
+    <result column="interim_times_remained" jdbcType="INTEGER" property="interimTimesRemained" />
+    <result column="interim_id_card_number" jdbcType="VARCHAR" property="interimIdCardNumber" />
+    <result column="expiry_date" jdbcType="TIMESTAMP" property="expiryDate" />
+    <result column="issuing_time" jdbcType="DATE" property="issuingTime" />
+    <result column="ocr_id" jdbcType="VARCHAR" property="ocrId" />
+    <result column="ocr_driving_license" jdbcType="VARCHAR" property="ocrDrivingLicense" />
+    <result column="account_balance" jdbcType="DECIMAL" property="accountBalance" />
+    <result column="deposit" jdbcType="DECIMAL" property="deposit" />
+    <result column="refund_status" jdbcType="INTEGER" property="refundStatus" />
+    <result column="failure_reason" jdbcType="VARCHAR" property="failureReason" />
+    <result column="scan_face_flag" jdbcType="TINYINT" property="scanFaceFlag" />
+    <result column="validation_id_card_number" jdbcType="VARCHAR" property="validationIdCardNumber" />
+    <result column="validation_name" jdbcType="VARCHAR" property="validationName" />
+    <result column="validation_id_card_expire_date" jdbcType="TIMESTAMP" property="validationIdCardExpireDate" />
+    <result column="id_card_expire_date" jdbcType="TIMESTAMP" property="idCardExpireDate" />
+    <result column="id_card_back_url" jdbcType="VARCHAR" property="idCardBackUrl" />
+    <result column="id_card_back_url_history" jdbcType="VARCHAR" property="idCardBackUrlHistory" />
+    <result column="face_url" jdbcType="VARCHAR" property="faceUrl" />
+    <result column="face_url_history" jdbcType="VARCHAR" property="faceUrlHistory" />
+    <result column="validation_license_number" jdbcType="VARCHAR" property="validationLicenseNumber" />
+    <result column="validation_license_name" jdbcType="VARCHAR" property="validationLicenseName" />
+    <result column="validation_license_expire_date" jdbcType="TIMESTAMP" property="validationLicenseExpireDate" />
+    <result column="validation_ocr_id_front" jdbcType="VARCHAR" property="validationOcrIdFront" />
+    <result column="validation_ocr_driving_license" jdbcType="VARCHAR" property="validationOcrDrivingLicense" />
+    <result column="driving_license_back_url" jdbcType="VARCHAR" property="drivingLicenseBackUrl" />
+    <result column="driving_license_back_url_history" jdbcType="VARCHAR" property="drivingLicenseBackUrlHistory" />
+    <result column="driving_license_archive_no" jdbcType="VARCHAR" property="drivingLicenseArchiveNo" />
+    <result column="driving_license_no" jdbcType="VARCHAR" property="drivingLicenseNo" />
+    <result column="driving_license_reduce_point" jdbcType="INTEGER" property="drivingLicenseReducePoint" />
+    <result column="driving_license_city_name" jdbcType="VARCHAR" property="drivingLicenseCityName" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="del_flag" jdbcType="CHAR" property="delFlag" />
+    <result column="cancel_cnt" jdbcType="BIGINT" property="cancelCnt" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="source" jdbcType="INTEGER" property="source" />
+    <result column="hkcoin" jdbcType="DECIMAL" property="hkcoin" />
+    <result column="registered_city_id" jdbcType="VARCHAR" property="registeredCityId" />
+    <result column="channel" jdbcType="VARCHAR" property="channel" />
+    <result column="channel_city_id" jdbcType="VARCHAR" property="channelCityId" />
+    <result column="invite_user_id" jdbcType="VARCHAR" property="inviteUserId" />
+    <result column="location_city_id" jdbcType="VARCHAR" property="locationCityId" />
+    <result column="zhima_score" jdbcType="INTEGER" property="zhimaScore" />
+    <result column="zhima_open_id" jdbcType="VARCHAR" property="zhimaOpenId" />
+    <result column="zhima_auth" jdbcType="INTEGER" property="zhimaAuth" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="id_card_url_history" jdbcType="VARCHAR" property="idCardUrlHistory" />
+    <result column="driving_license_url_history" jdbcType="VARCHAR" property="drivingLicenseUrlHistory" />
+    <result column="selfie_url" jdbcType="VARCHAR" property="selfieUrl" />
+    <result column="selfie_url_history" jdbcType="VARCHAR" property="selfieUrlHistory" />
+    <result column="credit_status" jdbcType="INTEGER" property="creditStatus" />
+    <result column="credit_status_updated_at" jdbcType="TIMESTAMP" property="creditStatusUpdatedAt" />
+    <result column="enterprise_auth_flag" jdbcType="TINYINT" property="enterpriseAuthFlag" />
+    <result column="enterprise_auth_img_url" jdbcType="VARCHAR" property="enterpriseAuthImgUrl" />
+    <result column="enterprise_auth_img_url_history" jdbcType="VARCHAR" property="enterpriseAuthImgUrlHistory" />
+    <result column="validation_start_time" jdbcType="TIMESTAMP" property="validationStartTime" />
+    <result column="validation_submit_time" jdbcType="TIMESTAMP" property="validationSubmitTime" />
+    <result column="validation_done_time" jdbcType="TIMESTAMP" property="validationDoneTime" />
+    <result column="is_validate_bad_information" jdbcType="INTEGER" property="isValidateBadInformation" />
+    <result column="validate_type" jdbcType="INTEGER" property="validateType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, user_name, password, head_portrait_url, nick_name, gender, birthday, mail, 
+    id_card_number, id_card_url, driving_license_url, audit_flag, interim_audit_flag, 
+    interim_times_remained, interim_id_card_number, expiry_date, issuing_time, ocr_id, 
+    ocr_driving_license, account_balance, deposit, refund_status, failure_reason, scan_face_flag, 
+    validation_id_card_number, validation_name, validation_id_card_expire_date, id_card_expire_date, 
+    id_card_back_url, id_card_back_url_history, face_url, face_url_history, validation_license_number, 
+    validation_license_name, validation_license_expire_date, validation_ocr_id_front, 
+    validation_ocr_driving_license, driving_license_back_url, driving_license_back_url_history, 
+    driving_license_archive_no, driving_license_no, driving_license_reduce_point, driving_license_city_name, 
+    create_date, create_by, update_date, update_by, remarks, del_flag, cancel_cnt, open_id, 
+    source, hkcoin, registered_city_id, channel, channel_city_id, invite_user_id, location_city_id, 
+    zhima_score, zhima_open_id, zhima_auth, name, id_card_url_history, driving_license_url_history, 
+    selfie_url, selfie_url_history, credit_status, credit_status_updated_at, enterprise_auth_flag, 
+    enterprise_auth_img_url, enterprise_auth_img_url_history, validation_start_time, 
+    validation_submit_time, validation_done_time, is_validate_bad_information, validate_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rt_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from rt_user
+    where user_id = #{userId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.springCloud.provider.entity.UserDO">
+    insert into rt_user (user_id, user_name, password, 
+      head_portrait_url, nick_name, gender, 
+      birthday, mail, id_card_number, 
+      id_card_url, driving_license_url, audit_flag, 
+      interim_audit_flag, interim_times_remained, 
+      interim_id_card_number, expiry_date, issuing_time, 
+      ocr_id, ocr_driving_license, account_balance, 
+      deposit, refund_status, failure_reason, 
+      scan_face_flag, validation_id_card_number, validation_name, 
+      validation_id_card_expire_date, id_card_expire_date, 
+      id_card_back_url, id_card_back_url_history, face_url, 
+      face_url_history, validation_license_number, 
+      validation_license_name, validation_license_expire_date, 
+      validation_ocr_id_front, validation_ocr_driving_license, 
+      driving_license_back_url, driving_license_back_url_history, 
+      driving_license_archive_no, driving_license_no, 
+      driving_license_reduce_point, driving_license_city_name, 
+      create_date, create_by, update_date, 
+      update_by, remarks, del_flag, 
+      cancel_cnt, open_id, source, 
+      hkcoin, registered_city_id, channel, 
+      channel_city_id, invite_user_id, location_city_id, 
+      zhima_score, zhima_open_id, zhima_auth, 
+      name, id_card_url_history, driving_license_url_history, 
+      selfie_url, selfie_url_history, credit_status, 
+      credit_status_updated_at, enterprise_auth_flag, 
+      enterprise_auth_img_url, enterprise_auth_img_url_history, 
+      validation_start_time, validation_submit_time, 
+      validation_done_time, is_validate_bad_information, 
+      validate_type)
+    values (#{userId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{headPortraitUrl,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, #{gender,jdbcType=BIT}, 
+      #{birthday,jdbcType=TIMESTAMP}, #{mail,jdbcType=VARCHAR}, #{idCardNumber,jdbcType=VARCHAR}, 
+      #{idCardUrl,jdbcType=VARCHAR}, #{drivingLicenseUrl,jdbcType=VARCHAR}, #{auditFlag,jdbcType=INTEGER}, 
+      #{interimAuditFlag,jdbcType=INTEGER}, #{interimTimesRemained,jdbcType=INTEGER}, 
+      #{interimIdCardNumber,jdbcType=VARCHAR}, #{expiryDate,jdbcType=TIMESTAMP}, #{issuingTime,jdbcType=DATE}, 
+      #{ocrId,jdbcType=VARCHAR}, #{ocrDrivingLicense,jdbcType=VARCHAR}, #{accountBalance,jdbcType=DECIMAL}, 
+      #{deposit,jdbcType=DECIMAL}, #{refundStatus,jdbcType=INTEGER}, #{failureReason,jdbcType=VARCHAR}, 
+      #{scanFaceFlag,jdbcType=TINYINT}, #{validationIdCardNumber,jdbcType=VARCHAR}, #{validationName,jdbcType=VARCHAR}, 
+      #{validationIdCardExpireDate,jdbcType=TIMESTAMP}, #{idCardExpireDate,jdbcType=TIMESTAMP}, 
+      #{idCardBackUrl,jdbcType=VARCHAR}, #{idCardBackUrlHistory,jdbcType=VARCHAR}, #{faceUrl,jdbcType=VARCHAR}, 
+      #{faceUrlHistory,jdbcType=VARCHAR}, #{validationLicenseNumber,jdbcType=VARCHAR}, 
+      #{validationLicenseName,jdbcType=VARCHAR}, #{validationLicenseExpireDate,jdbcType=TIMESTAMP}, 
+      #{validationOcrIdFront,jdbcType=VARCHAR}, #{validationOcrDrivingLicense,jdbcType=VARCHAR}, 
+      #{drivingLicenseBackUrl,jdbcType=VARCHAR}, #{drivingLicenseBackUrlHistory,jdbcType=VARCHAR}, 
+      #{drivingLicenseArchiveNo,jdbcType=VARCHAR}, #{drivingLicenseNo,jdbcType=VARCHAR}, 
+      #{drivingLicenseReducePoint,jdbcType=INTEGER}, #{drivingLicenseCityName,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=TIMESTAMP}, 
+      #{updateBy,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{delFlag,jdbcType=CHAR}, 
+      #{cancelCnt,jdbcType=BIGINT}, #{openId,jdbcType=VARCHAR}, #{source,jdbcType=INTEGER}, 
+      #{hkcoin,jdbcType=DECIMAL}, #{registeredCityId,jdbcType=VARCHAR}, #{channel,jdbcType=VARCHAR}, 
+      #{channelCityId,jdbcType=VARCHAR}, #{inviteUserId,jdbcType=VARCHAR}, #{locationCityId,jdbcType=VARCHAR}, 
+      #{zhimaScore,jdbcType=INTEGER}, #{zhimaOpenId,jdbcType=VARCHAR}, #{zhimaAuth,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{idCardUrlHistory,jdbcType=VARCHAR}, #{drivingLicenseUrlHistory,jdbcType=VARCHAR}, 
+      #{selfieUrl,jdbcType=VARCHAR}, #{selfieUrlHistory,jdbcType=VARCHAR}, #{creditStatus,jdbcType=INTEGER}, 
+      #{creditStatusUpdatedAt,jdbcType=TIMESTAMP}, #{enterpriseAuthFlag,jdbcType=TINYINT}, 
+      #{enterpriseAuthImgUrl,jdbcType=VARCHAR}, #{enterpriseAuthImgUrlHistory,jdbcType=VARCHAR}, 
+      #{validationStartTime,jdbcType=TIMESTAMP}, #{validationSubmitTime,jdbcType=TIMESTAMP}, 
+      #{validationDoneTime,jdbcType=TIMESTAMP}, #{isValidateBadInformation,jdbcType=INTEGER}, 
+      #{validateType,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.springCloud.provider.entity.UserDO">
+    insert into rt_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="headPortraitUrl != null">
+        head_portrait_url,
+      </if>
+      <if test="nickName != null">
+        nick_name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="idCardNumber != null">
+        id_card_number,
+      </if>
+      <if test="idCardUrl != null">
+        id_card_url,
+      </if>
+      <if test="drivingLicenseUrl != null">
+        driving_license_url,
+      </if>
+      <if test="auditFlag != null">
+        audit_flag,
+      </if>
+      <if test="interimAuditFlag != null">
+        interim_audit_flag,
+      </if>
+      <if test="interimTimesRemained != null">
+        interim_times_remained,
+      </if>
+      <if test="interimIdCardNumber != null">
+        interim_id_card_number,
+      </if>
+      <if test="expiryDate != null">
+        expiry_date,
+      </if>
+      <if test="issuingTime != null">
+        issuing_time,
+      </if>
+      <if test="ocrId != null">
+        ocr_id,
+      </if>
+      <if test="ocrDrivingLicense != null">
+        ocr_driving_license,
+      </if>
+      <if test="accountBalance != null">
+        account_balance,
+      </if>
+      <if test="deposit != null">
+        deposit,
+      </if>
+      <if test="refundStatus != null">
+        refund_status,
+      </if>
+      <if test="failureReason != null">
+        failure_reason,
+      </if>
+      <if test="scanFaceFlag != null">
+        scan_face_flag,
+      </if>
+      <if test="validationIdCardNumber != null">
+        validation_id_card_number,
+      </if>
+      <if test="validationName != null">
+        validation_name,
+      </if>
+      <if test="validationIdCardExpireDate != null">
+        validation_id_card_expire_date,
+      </if>
+      <if test="idCardExpireDate != null">
+        id_card_expire_date,
+      </if>
+      <if test="idCardBackUrl != null">
+        id_card_back_url,
+      </if>
+      <if test="idCardBackUrlHistory != null">
+        id_card_back_url_history,
+      </if>
+      <if test="faceUrl != null">
+        face_url,
+      </if>
+      <if test="faceUrlHistory != null">
+        face_url_history,
+      </if>
+      <if test="validationLicenseNumber != null">
+        validation_license_number,
+      </if>
+      <if test="validationLicenseName != null">
+        validation_license_name,
+      </if>
+      <if test="validationLicenseExpireDate != null">
+        validation_license_expire_date,
+      </if>
+      <if test="validationOcrIdFront != null">
+        validation_ocr_id_front,
+      </if>
+      <if test="validationOcrDrivingLicense != null">
+        validation_ocr_driving_license,
+      </if>
+      <if test="drivingLicenseBackUrl != null">
+        driving_license_back_url,
+      </if>
+      <if test="drivingLicenseBackUrlHistory != null">
+        driving_license_back_url_history,
+      </if>
+      <if test="drivingLicenseArchiveNo != null">
+        driving_license_archive_no,
+      </if>
+      <if test="drivingLicenseNo != null">
+        driving_license_no,
+      </if>
+      <if test="drivingLicenseReducePoint != null">
+        driving_license_reduce_point,
+      </if>
+      <if test="drivingLicenseCityName != null">
+        driving_license_city_name,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="createBy != null">
+        create_by,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+      <if test="updateBy != null">
+        update_by,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+      <if test="cancelCnt != null">
+        cancel_cnt,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="hkcoin != null">
+        hkcoin,
+      </if>
+      <if test="registeredCityId != null">
+        registered_city_id,
+      </if>
+      <if test="channel != null">
+        channel,
+      </if>
+      <if test="channelCityId != null">
+        channel_city_id,
+      </if>
+      <if test="inviteUserId != null">
+        invite_user_id,
+      </if>
+      <if test="locationCityId != null">
+        location_city_id,
+      </if>
+      <if test="zhimaScore != null">
+        zhima_score,
+      </if>
+      <if test="zhimaOpenId != null">
+        zhima_open_id,
+      </if>
+      <if test="zhimaAuth != null">
+        zhima_auth,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="idCardUrlHistory != null">
+        id_card_url_history,
+      </if>
+      <if test="drivingLicenseUrlHistory != null">
+        driving_license_url_history,
+      </if>
+      <if test="selfieUrl != null">
+        selfie_url,
+      </if>
+      <if test="selfieUrlHistory != null">
+        selfie_url_history,
+      </if>
+      <if test="creditStatus != null">
+        credit_status,
+      </if>
+      <if test="creditStatusUpdatedAt != null">
+        credit_status_updated_at,
+      </if>
+      <if test="enterpriseAuthFlag != null">
+        enterprise_auth_flag,
+      </if>
+      <if test="enterpriseAuthImgUrl != null">
+        enterprise_auth_img_url,
+      </if>
+      <if test="enterpriseAuthImgUrlHistory != null">
+        enterprise_auth_img_url_history,
+      </if>
+      <if test="validationStartTime != null">
+        validation_start_time,
+      </if>
+      <if test="validationSubmitTime != null">
+        validation_submit_time,
+      </if>
+      <if test="validationDoneTime != null">
+        validation_done_time,
+      </if>
+      <if test="isValidateBadInformation != null">
+        is_validate_bad_information,
+      </if>
+      <if test="validateType != null">
+        validate_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="headPortraitUrl != null">
+        #{headPortraitUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=BIT},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumber != null">
+        #{idCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrl != null">
+        #{idCardUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseUrl != null">
+        #{drivingLicenseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="auditFlag != null">
+        #{auditFlag,jdbcType=INTEGER},
+      </if>
+      <if test="interimAuditFlag != null">
+        #{interimAuditFlag,jdbcType=INTEGER},
+      </if>
+      <if test="interimTimesRemained != null">
+        #{interimTimesRemained,jdbcType=INTEGER},
+      </if>
+      <if test="interimIdCardNumber != null">
+        #{interimIdCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryDate != null">
+        #{expiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issuingTime != null">
+        #{issuingTime,jdbcType=DATE},
+      </if>
+      <if test="ocrId != null">
+        #{ocrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrDrivingLicense != null">
+        #{ocrDrivingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBalance != null">
+        #{accountBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="deposit != null">
+        #{deposit,jdbcType=DECIMAL},
+      </if>
+      <if test="refundStatus != null">
+        #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="failureReason != null">
+        #{failureReason,jdbcType=VARCHAR},
+      </if>
+      <if test="scanFaceFlag != null">
+        #{scanFaceFlag,jdbcType=TINYINT},
+      </if>
+      <if test="validationIdCardNumber != null">
+        #{validationIdCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="validationName != null">
+        #{validationName,jdbcType=VARCHAR},
+      </if>
+      <if test="validationIdCardExpireDate != null">
+        #{validationIdCardExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardExpireDate != null">
+        #{idCardExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardBackUrl != null">
+        #{idCardBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBackUrlHistory != null">
+        #{idCardBackUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="faceUrl != null">
+        #{faceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="faceUrlHistory != null">
+        #{faceUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseNumber != null">
+        #{validationLicenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseName != null">
+        #{validationLicenseName,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseExpireDate != null">
+        #{validationLicenseExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationOcrIdFront != null">
+        #{validationOcrIdFront,jdbcType=VARCHAR},
+      </if>
+      <if test="validationOcrDrivingLicense != null">
+        #{validationOcrDrivingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseBackUrl != null">
+        #{drivingLicenseBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseBackUrlHistory != null">
+        #{drivingLicenseBackUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseArchiveNo != null">
+        #{drivingLicenseArchiveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseNo != null">
+        #{drivingLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseReducePoint != null">
+        #{drivingLicenseReducePoint,jdbcType=INTEGER},
+      </if>
+      <if test="drivingLicenseCityName != null">
+        #{drivingLicenseCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="cancelCnt != null">
+        #{cancelCnt,jdbcType=BIGINT},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=INTEGER},
+      </if>
+      <if test="hkcoin != null">
+        #{hkcoin,jdbcType=DECIMAL},
+      </if>
+      <if test="registeredCityId != null">
+        #{registeredCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null">
+        #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="channelCityId != null">
+        #{channelCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="inviteUserId != null">
+        #{inviteUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="locationCityId != null">
+        #{locationCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhimaScore != null">
+        #{zhimaScore,jdbcType=INTEGER},
+      </if>
+      <if test="zhimaOpenId != null">
+        #{zhimaOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhimaAuth != null">
+        #{zhimaAuth,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrlHistory != null">
+        #{idCardUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseUrlHistory != null">
+        #{drivingLicenseUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="selfieUrl != null">
+        #{selfieUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="selfieUrlHistory != null">
+        #{selfieUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="creditStatus != null">
+        #{creditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="creditStatusUpdatedAt != null">
+        #{creditStatusUpdatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enterpriseAuthFlag != null">
+        #{enterpriseAuthFlag,jdbcType=TINYINT},
+      </if>
+      <if test="enterpriseAuthImgUrl != null">
+        #{enterpriseAuthImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseAuthImgUrlHistory != null">
+        #{enterpriseAuthImgUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="validationStartTime != null">
+        #{validationStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationSubmitTime != null">
+        #{validationSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationDoneTime != null">
+        #{validationDoneTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValidateBadInformation != null">
+        #{isValidateBadInformation,jdbcType=INTEGER},
+      </if>
+      <if test="validateType != null">
+        #{validateType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.springCloud.provider.entity.UserDO">
+    update rt_user
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="headPortraitUrl != null">
+        head_portrait_url = #{headPortraitUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null">
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=BIT},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mail != null">
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardNumber != null">
+        id_card_number = #{idCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrl != null">
+        id_card_url = #{idCardUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseUrl != null">
+        driving_license_url = #{drivingLicenseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="auditFlag != null">
+        audit_flag = #{auditFlag,jdbcType=INTEGER},
+      </if>
+      <if test="interimAuditFlag != null">
+        interim_audit_flag = #{interimAuditFlag,jdbcType=INTEGER},
+      </if>
+      <if test="interimTimesRemained != null">
+        interim_times_remained = #{interimTimesRemained,jdbcType=INTEGER},
+      </if>
+      <if test="interimIdCardNumber != null">
+        interim_id_card_number = #{interimIdCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="expiryDate != null">
+        expiry_date = #{expiryDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="issuingTime != null">
+        issuing_time = #{issuingTime,jdbcType=DATE},
+      </if>
+      <if test="ocrId != null">
+        ocr_id = #{ocrId,jdbcType=VARCHAR},
+      </if>
+      <if test="ocrDrivingLicense != null">
+        ocr_driving_license = #{ocrDrivingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="accountBalance != null">
+        account_balance = #{accountBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="deposit != null">
+        deposit = #{deposit,jdbcType=DECIMAL},
+      </if>
+      <if test="refundStatus != null">
+        refund_status = #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="failureReason != null">
+        failure_reason = #{failureReason,jdbcType=VARCHAR},
+      </if>
+      <if test="scanFaceFlag != null">
+        scan_face_flag = #{scanFaceFlag,jdbcType=TINYINT},
+      </if>
+      <if test="validationIdCardNumber != null">
+        validation_id_card_number = #{validationIdCardNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="validationName != null">
+        validation_name = #{validationName,jdbcType=VARCHAR},
+      </if>
+      <if test="validationIdCardExpireDate != null">
+        validation_id_card_expire_date = #{validationIdCardExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardExpireDate != null">
+        id_card_expire_date = #{idCardExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="idCardBackUrl != null">
+        id_card_back_url = #{idCardBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardBackUrlHistory != null">
+        id_card_back_url_history = #{idCardBackUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="faceUrl != null">
+        face_url = #{faceUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="faceUrlHistory != null">
+        face_url_history = #{faceUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseNumber != null">
+        validation_license_number = #{validationLicenseNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseName != null">
+        validation_license_name = #{validationLicenseName,jdbcType=VARCHAR},
+      </if>
+      <if test="validationLicenseExpireDate != null">
+        validation_license_expire_date = #{validationLicenseExpireDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationOcrIdFront != null">
+        validation_ocr_id_front = #{validationOcrIdFront,jdbcType=VARCHAR},
+      </if>
+      <if test="validationOcrDrivingLicense != null">
+        validation_ocr_driving_license = #{validationOcrDrivingLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseBackUrl != null">
+        driving_license_back_url = #{drivingLicenseBackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseBackUrlHistory != null">
+        driving_license_back_url_history = #{drivingLicenseBackUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseArchiveNo != null">
+        driving_license_archive_no = #{drivingLicenseArchiveNo,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseNo != null">
+        driving_license_no = #{drivingLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseReducePoint != null">
+        driving_license_reduce_point = #{drivingLicenseReducePoint,jdbcType=INTEGER},
+      </if>
+      <if test="drivingLicenseCityName != null">
+        driving_license_city_name = #{drivingLicenseCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=CHAR},
+      </if>
+      <if test="cancelCnt != null">
+        cancel_cnt = #{cancelCnt,jdbcType=BIGINT},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=INTEGER},
+      </if>
+      <if test="hkcoin != null">
+        hkcoin = #{hkcoin,jdbcType=DECIMAL},
+      </if>
+      <if test="registeredCityId != null">
+        registered_city_id = #{registeredCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null">
+        channel = #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="channelCityId != null">
+        channel_city_id = #{channelCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="inviteUserId != null">
+        invite_user_id = #{inviteUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="locationCityId != null">
+        location_city_id = #{locationCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhimaScore != null">
+        zhima_score = #{zhimaScore,jdbcType=INTEGER},
+      </if>
+      <if test="zhimaOpenId != null">
+        zhima_open_id = #{zhimaOpenId,jdbcType=VARCHAR},
+      </if>
+      <if test="zhimaAuth != null">
+        zhima_auth = #{zhimaAuth,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardUrlHistory != null">
+        id_card_url_history = #{idCardUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="drivingLicenseUrlHistory != null">
+        driving_license_url_history = #{drivingLicenseUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="selfieUrl != null">
+        selfie_url = #{selfieUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="selfieUrlHistory != null">
+        selfie_url_history = #{selfieUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="creditStatus != null">
+        credit_status = #{creditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="creditStatusUpdatedAt != null">
+        credit_status_updated_at = #{creditStatusUpdatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enterpriseAuthFlag != null">
+        enterprise_auth_flag = #{enterpriseAuthFlag,jdbcType=TINYINT},
+      </if>
+      <if test="enterpriseAuthImgUrl != null">
+        enterprise_auth_img_url = #{enterpriseAuthImgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseAuthImgUrlHistory != null">
+        enterprise_auth_img_url_history = #{enterpriseAuthImgUrlHistory,jdbcType=VARCHAR},
+      </if>
+      <if test="validationStartTime != null">
+        validation_start_time = #{validationStartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationSubmitTime != null">
+        validation_submit_time = #{validationSubmitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validationDoneTime != null">
+        validation_done_time = #{validationDoneTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isValidateBadInformation != null">
+        is_validate_bad_information = #{isValidateBadInformation,jdbcType=INTEGER},
+      </if>
+      <if test="validateType != null">
+        validate_type = #{validateType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.springCloud.provider.entity.UserDO">
+    update rt_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      head_portrait_url = #{headPortraitUrl,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=BIT},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      mail = #{mail,jdbcType=VARCHAR},
+      id_card_number = #{idCardNumber,jdbcType=VARCHAR},
+      id_card_url = #{idCardUrl,jdbcType=VARCHAR},
+      driving_license_url = #{drivingLicenseUrl,jdbcType=VARCHAR},
+      audit_flag = #{auditFlag,jdbcType=INTEGER},
+      interim_audit_flag = #{interimAuditFlag,jdbcType=INTEGER},
+      interim_times_remained = #{interimTimesRemained,jdbcType=INTEGER},
+      interim_id_card_number = #{interimIdCardNumber,jdbcType=VARCHAR},
+      expiry_date = #{expiryDate,jdbcType=TIMESTAMP},
+      issuing_time = #{issuingTime,jdbcType=DATE},
+      ocr_id = #{ocrId,jdbcType=VARCHAR},
+      ocr_driving_license = #{ocrDrivingLicense,jdbcType=VARCHAR},
+      account_balance = #{accountBalance,jdbcType=DECIMAL},
+      deposit = #{deposit,jdbcType=DECIMAL},
+      refund_status = #{refundStatus,jdbcType=INTEGER},
+      failure_reason = #{failureReason,jdbcType=VARCHAR},
+      scan_face_flag = #{scanFaceFlag,jdbcType=TINYINT},
+      validation_id_card_number = #{validationIdCardNumber,jdbcType=VARCHAR},
+      validation_name = #{validationName,jdbcType=VARCHAR},
+      validation_id_card_expire_date = #{validationIdCardExpireDate,jdbcType=TIMESTAMP},
+      id_card_expire_date = #{idCardExpireDate,jdbcType=TIMESTAMP},
+      id_card_back_url = #{idCardBackUrl,jdbcType=VARCHAR},
+      id_card_back_url_history = #{idCardBackUrlHistory,jdbcType=VARCHAR},
+      face_url = #{faceUrl,jdbcType=VARCHAR},
+      face_url_history = #{faceUrlHistory,jdbcType=VARCHAR},
+      validation_license_number = #{validationLicenseNumber,jdbcType=VARCHAR},
+      validation_license_name = #{validationLicenseName,jdbcType=VARCHAR},
+      validation_license_expire_date = #{validationLicenseExpireDate,jdbcType=TIMESTAMP},
+      validation_ocr_id_front = #{validationOcrIdFront,jdbcType=VARCHAR},
+      validation_ocr_driving_license = #{validationOcrDrivingLicense,jdbcType=VARCHAR},
+      driving_license_back_url = #{drivingLicenseBackUrl,jdbcType=VARCHAR},
+      driving_license_back_url_history = #{drivingLicenseBackUrlHistory,jdbcType=VARCHAR},
+      driving_license_archive_no = #{drivingLicenseArchiveNo,jdbcType=VARCHAR},
+      driving_license_no = #{drivingLicenseNo,jdbcType=VARCHAR},
+      driving_license_reduce_point = #{drivingLicenseReducePoint,jdbcType=INTEGER},
+      driving_license_city_name = #{drivingLicenseCityName,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      create_by = #{createBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=TIMESTAMP},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=CHAR},
+      cancel_cnt = #{cancelCnt,jdbcType=BIGINT},
+      open_id = #{openId,jdbcType=VARCHAR},
+      source = #{source,jdbcType=INTEGER},
+      hkcoin = #{hkcoin,jdbcType=DECIMAL},
+      registered_city_id = #{registeredCityId,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=VARCHAR},
+      channel_city_id = #{channelCityId,jdbcType=VARCHAR},
+      invite_user_id = #{inviteUserId,jdbcType=VARCHAR},
+      location_city_id = #{locationCityId,jdbcType=VARCHAR},
+      zhima_score = #{zhimaScore,jdbcType=INTEGER},
+      zhima_open_id = #{zhimaOpenId,jdbcType=VARCHAR},
+      zhima_auth = #{zhimaAuth,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      id_card_url_history = #{idCardUrlHistory,jdbcType=VARCHAR},
+      driving_license_url_history = #{drivingLicenseUrlHistory,jdbcType=VARCHAR},
+      selfie_url = #{selfieUrl,jdbcType=VARCHAR},
+      selfie_url_history = #{selfieUrlHistory,jdbcType=VARCHAR},
+      credit_status = #{creditStatus,jdbcType=INTEGER},
+      credit_status_updated_at = #{creditStatusUpdatedAt,jdbcType=TIMESTAMP},
+      enterprise_auth_flag = #{enterpriseAuthFlag,jdbcType=TINYINT},
+      enterprise_auth_img_url = #{enterpriseAuthImgUrl,jdbcType=VARCHAR},
+      enterprise_auth_img_url_history = #{enterpriseAuthImgUrlHistory,jdbcType=VARCHAR},
+      validation_start_time = #{validationStartTime,jdbcType=TIMESTAMP},
+      validation_submit_time = #{validationSubmitTime,jdbcType=TIMESTAMP},
+      validation_done_time = #{validationDoneTime,jdbcType=TIMESTAMP},
+      is_validate_bad_information = #{isValidateBadInformation,jdbcType=INTEGER},
+      validate_type = #{validateType,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=BIGINT}
+  </update>
 </mapper>
