@@ -1,5 +1,6 @@
 package com.springCloud.provider.service.Impl;
 
+import com.springCloud.provider.entity.RentalOrder;
 import com.springCloud.provider.entity.UserDO;
 import com.springCloud.provider.persistence.UserDOMapper;
 import com.springCloud.provider.service.UserService;
@@ -8,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.concurrent.*;
 
 @Service
@@ -22,6 +24,13 @@ public class UserServiceImpl implements UserService {
     public UserDO findUserById(Long id) throws ExecutionException, InterruptedException {
         Future result = ProviderThreadPoolUtil.execAsync(new MyTask(id));
         return (UserDO)result.get();
+    }
+
+    @Override
+    public List<RentalOrder> findOrders(Long userId) {
+        /*List<RentalOrder> orders = userDoMapper.ordersByUid(userId);
+        return orders;*/
+        return null;
     }
 
     class MyTask implements Callable{

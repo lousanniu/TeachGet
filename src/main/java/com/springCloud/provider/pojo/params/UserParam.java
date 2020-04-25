@@ -38,6 +38,6 @@ public class UserParam {
 
     @ApiModelProperty(position = 5, value = "1 男性1； 0 女性；", required = true, example = "1")
     @PatternInt(val = {0,1}, message = "性别只能是0或1")
-    private String hello;
+    private Integer hello;
 
 }

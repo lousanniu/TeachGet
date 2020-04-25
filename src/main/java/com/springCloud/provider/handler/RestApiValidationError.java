@@ -2,13 +2,6 @@ package com.springCloud.provider.handler;
 
 import java.beans.ConstructorProperties;
 
-/**
- * 〈一句话功能简述〉<br>
- * 〈〉
- *
- * @author 娜苏苏
- * @create 2019/8/31
- */
 public class RestApiValidationError implements ApiSubError {
     private String object;
     private String field;

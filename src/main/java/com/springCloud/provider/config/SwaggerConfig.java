@@ -16,13 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
 
-/**
- * 〈一句话功能简述〉<br>
- * 〈〉
- *
- * @author 娜苏苏
- * @create 2019/8/31
- */
 @Configuration
 @EnableSwagger2
 @RefreshScope

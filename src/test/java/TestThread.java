@@ -8,13 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * 〈一句话功能简述〉<br>
- * 〈测试多线程下状况〉
- *
- * @author 娜苏苏
- * @create 2019/7/28
- */
+
 public class TestThread {
 
     @Autowired
@@ -38,9 +32,21 @@ public class TestThread {
         Optional.ofNullable(userVos).get();
     }
 
-    @Test
-    public void testht12() {
 
+
+    @Test
+    public void testht123() {
+        StringBuffer a = new StringBuffer("A");
+        StringBuffer b = new StringBuffer("B");
+
+        operate(a,b);
+        System.out.println(a+","+b);
+
+    }
+
+    private void operate(StringBuffer a, StringBuffer b) {
+        a.append(b);
+        b = a;
     }
 
 

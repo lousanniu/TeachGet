@@ -17,13 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
 import java.util.Locale;
 
-/**
- * 〈一句话功能简述〉<br>
- * 〈〉
- *
- * @author 娜苏苏
- * @create 2019/8/31
- */
 @Order(-2147483648)
 @ControllerAdvice
 public class GlobalExceptionHandler {

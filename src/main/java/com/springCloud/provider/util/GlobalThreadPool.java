@@ -5,13 +5,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
 
-/**
- * 〈一句话功能简述〉<br>
- * 〈〉
- *
- * @author 娜苏苏
- * @create 2019/8/21
- */
 public class GlobalThreadPool {
     private static final Logger LOGGER = LoggerFactory.getLogger(GlobalThreadPool.class);
     private static ExecutorService executor;
